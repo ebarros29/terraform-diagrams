@@ -1,6 +1,6 @@
 # Terraform + Diagrams 
 
-The schoolbox-api is a simple API that has been developed in order to list, create, update and remove students from a DB (complete CRUD).
+Terraform + Diagrams: Provisioning and visualizing a simple environment on AWS.
 
 [Terraform]
 
