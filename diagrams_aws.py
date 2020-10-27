@@ -8,7 +8,7 @@ from pprint import pprint
 
 ## Opening the .tfstate file
 
-with open('aws_terraform/terraform.tfstate') as json_file:
+with open('aws_terraform/terraform.tfstate.backup') as json_file:
     tf_data = json.load(json_file)
 
 #pprint(data)
@@ -24,27 +24,27 @@ print("\nResources Name List: \n")
 
 pprint(r_names)
 
-app_vpc_name = r_names[r_names.index('dac_app_vpc')]
-db_vpc_name = r_names[r_names.index('dac_db_vpc')]
+app_vpc_name = r_names[len(r_names)-3]
+db_vpc_name = r_names[len(r_names)-2]
 
 app_vpc_cidr = '10.128.0.0/16'
 db_vpc_cidr = '10.240.0.0/16'
 
-app_subnet_name = r_names[r_names.index('dac_app_subnet')]
-db_subnet1_name = r_names[r_names.index('dac_db_subnet_1')]
-db_subnet2_name = r_names[r_names.index('dac_db_subnet_2')]
+app_subnet_name = r_names[len(r_names)-6]
+db_subnet1_name = r_names[len(r_names)-5]
+db_subnet2_name = r_names[len(r_names)-4]
 
 app_subnet_cidr = '10.128.0.0/24'
 db_subnet1_cidr = '10.240.0.0/24'
 db_subnet2_cidr = '10.240.1.0/24'
 
-peering_name = r_names[r_names.index('dac_app_db_peering')]
+peering_name = r_names[len(r_names)-1]
 
-app_name = r_names[r_names.index('dac_app')]
-db_name = r_names[r_names.index('dac_db')]
+app_name = r_names[2]
+db_name = r_names[0]
 
-tgp_name = r_names[r_names.index('dac_app_tgp')]
-lb_name = r_names[r_names.index('dac_app_lb')]
+tgp_name = r_names[6]
+lb_name = r_names[4]
 
 print("\nGenerating Diagram...")
 
