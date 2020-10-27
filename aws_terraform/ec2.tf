@@ -4,7 +4,7 @@ resource "aws_instance" "dac_app" {
   count                         = 3
   ami                           = "ami-02898a1921d38a50b"
   instance_type                 = "t2.micro"
-  key_name                      = "awsinst"
+  key_name                      = "<KEY_name>"
   vpc_security_group_ids        = [aws_security_group.dac_app_sg.id]
   subnet_id                     = aws_subnet.dac_app_subnet.id
   associate_public_ip_address   = "true"
