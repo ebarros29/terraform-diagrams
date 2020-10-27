@@ -27,12 +27,13 @@ These instructions will get you a copy of the project up and running on your loc
 
 In order to run this environment, you need just install: 
 
-Python 3.6+
-Terraform 0.13+
+- Python 3.6+
+
+- Terraform 0.13+
 
 For more information, see https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python and https://learn.hashicorp.com/tutorials/terraform/install-cli
 
-Clone this repository:
+Open your terminal and clone this repository:
 
 ```
 git clone https://github.com/ebarros29/diagrams-terraform
@@ -42,42 +43,53 @@ cd diagrams-terraform/
 
 ### Installing
 
-<!-- A step by step series of examples that tell you how to get a development env running
+A step by step series of examples that tell you how to provision the environment and run the python code (generate the diagram).
 
-Installing Docker CE and start Docker daemon
-
-```
-https://docs.docker.com/install/
-```
-
-Installing Docker Compose
+Installing Python 3.6+ and pip3
 
 ```
-https://docs.docker.com/compose/install/
+https://docs.python.org/3/using/unix.html#getting-and-installing-the-latest-version-of-python
 ```
--->
+
+Installing Terraform
+
+```
+https://learn.hashicorp.com/tutorials/terraform/install-cli
+```
+
+Installing dependencies
+
+```
+pip install --no-cache-dir -r requirements.txt
+```
 
 ## Running the environment
 
-<!--
+Type in your terminal:
 
 ```
-docker-compose up -d
+cd aws_terraform/
+
+terraform plan
+
+terraform apply [yes]
 
 ```
-Type http://localhost:5000 in your browser in order to see the Welcome Screen
 
-To test the API CRUD by using swagger, type the below URI in your browser:
-http://localhost:5000/api/ui/#/Student
+Wait a few minutes while Terraform finish the provisioning.
 
-To teste the API CRUD by using curl or other request tool, use the below URI:
-http://localhost:5000/api/student
+When it finish, type:
 
--->
+```
+python3 diagrams_aws.py
 
-## Running the tests
+```
 
-<!-- Simple tests to make sure that is everthing fine.
+After that, your diagram has been created in a file ".png" in your current directory ;)  
+
+<!-- ## Running the tests
+
+Simple tests to make sure that is everthing fine.
 
 ### Break down into end to end tests
 
