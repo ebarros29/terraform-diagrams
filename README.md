@@ -36,9 +36,9 @@ For more information, see https://docs.python.org/3/using/unix.html#getting-and-
 Open your terminal and clone this repository:
 
 ```
-git clone https://github.com/ebarros29/diagrams-terraform
+git clone https://github.com/ebarros29/terraform-diagrams
 
-cd diagrams-terraform/
+cd terraform-diagrams/
 ```
 
 ### Installing
